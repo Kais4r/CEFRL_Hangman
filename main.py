@@ -1,11 +1,9 @@
 import pygame
 import os
-import random
-import math
 
 # @@@@@@@@@@ user_package import
 from Scripts.ui_buttons import Button
-from Scripts.Scenes import scene_game
+from Scripts.Scenes import scene_levelSelection
 
 # @@@@@@@@@@ pygame inition
 pygame.init()
@@ -78,8 +76,7 @@ while run:
 
         # draw button
         if resume_button.draw(screen) == True:
-            scene_game.main(True)
-            print("resume")
+            scene_levelSelection.main(True)
 
         if options_button.draw(screen) == True:
             current_scene = "options"
@@ -100,6 +97,5 @@ while run:
         if event.type == pygame.QUIT:
             run = False
         pygame.display.update()
-
-# ---------- fuctions run
+        
 pygame.quit()

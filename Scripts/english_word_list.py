@@ -15,10 +15,10 @@ class EnglishWord_List:
         conn = sqlite3.connect('data.db')
         # print("Opened database successfully")
         cursor = conn.execute(
-            "SELECT id, name, meaning, discription, synonym, level from " + level)
+            "SELECT id, name, meaning, description, synonym, level from " + level)
         for row in cursor:
             new_word = EnglishWord(row[0],row[1],row[2],row[3],row[4],row[5])
-            self.list.append(new_word) 
+            self.list.append(new_word)
 
-        print("Operation done successfully")
+        #print("english_word_list create successfully")
         conn.close()
