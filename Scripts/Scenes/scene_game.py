@@ -39,15 +39,19 @@ imageList = [pygame.image.load(os.path.join(
 
 # Load button
 btn_image_dir = game_dir[:-14] + "\Assets\Images\Buttons"
+
 hintBtn_img = pygame.image.load(
     btn_image_dir + "\Button_Hint2.png").convert_alpha()
-
 hint_button = Button(995, 420, hintBtn_img, 1)
+
+backBtn_img = pygame.image.load(
+    btn_image_dir + "\Button_back.png").convert_alpha()
+back_button = Button(1125, 420, backBtn_img, 1)
 
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 # Functions
 
-def main(run):
+def main(run, level):
     # Game variables
     def generateButtonLetterList():
         letterList = []
@@ -102,9 +106,15 @@ def main(run):
 
     #-----Prepare the word list for game
     showedWordList = EnglishWord_List()
+    firstGenerateWordList = EnglishWord_List()
     wordListTest = EnglishWord_List()
     # wordList = english_word_list.GenerateList("A1");
-    wordListTest.GenerateList("WORDLIST")
+    firstGenerateWordList.GenerateList("WORDLIST")
+
+    for word in firstGenerateWordList.list:
+        if word.level == level:
+            wordListTest.list.append(word)
+    #wordListTest
     score = 0
     lives = 6
     hints = 2
@@ -196,6 +206,9 @@ def main(run):
             draw()
 
             # Draw UI element here:
+            if back_button.draw(screen) == True:
+                playing = False
+                run = False
             if hint_button.draw(screen) == True:
                 if showHintClicked == 0:
                     if(hints > 0):

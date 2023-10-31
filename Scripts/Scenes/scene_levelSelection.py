@@ -74,17 +74,17 @@ def main(run):
         draw_text("CERF level select", font, TEXT_COL, 100, 50)
 
         if levelA1_button.draw(screen) == True:
-            scene_game.main(True)
+            scene_game.main(True, "A1")
         if levelA2_button.draw(screen) == True:
-            scene_game.main(True)
+            scene_game.main(True, "A2")
         if levelB1_button.draw(screen) == True:
-            scene_game.main(True)
+            scene_game.main(True, "B1")
         if levelB2_button.draw(screen) == True:
-            scene_game.main(True)
+            scene_game.main(True, "B2")
         if levelC1_button.draw(screen) == True:
-            scene_game.main(True)
+            scene_game.main(True, "C1")
         if levelC2_button.draw(screen) == True:
-            scene_game.main(True)
+            scene_game.main(True, "C2")
         if back_button.draw(screen) == True:
             run = False
 

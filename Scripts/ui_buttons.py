@@ -1,6 +1,5 @@
 import pygame
 
-
 class Button():
     def __init__(self, x, y, image, scale):
         width = image.get_width()
@@ -20,6 +19,7 @@ class Button():
 
         # check mouse over and clicked conditions
         if self.rect.collidepoint(pos):
+            # check if the left mouse button is currently pressed
             if pygame.mouse.get_pressed()[0] == 1 and self.clicked == False:
                 self.clicked = True
                 action = True
