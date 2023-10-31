@@ -80,11 +80,14 @@ def main(run):
         if levelB1_button.draw(screen) == True:
             scene_game.main(True, "B1")
         if levelB2_button.draw(screen) == True:
-            scene_game.main(True, "B2")
+            #scene_game.main(True, "B2")
+            print("level B2")
         if levelC1_button.draw(screen) == True:
-            scene_game.main(True, "C1")
+            #scene_game.main(True, "C1")
+            print("level C1")
         if levelC2_button.draw(screen) == True:
-            scene_game.main(True, "C2")
+            #scene_game.main(True, "C2")
+            print("level C2")
         if back_button.draw(screen) == True:
             run = False
 

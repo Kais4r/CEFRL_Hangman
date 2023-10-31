@@ -93,13 +93,13 @@ def main(run, level):
         screen.blit(img, (x, y))
 
     def display_message(message):
-        pygame.time.delay(1000)
+        pygame.time.delay(500)
         screen.fill(WHITE)
         message_text = WORD_FONT.render(message, 1, BLACK)
         screen.blit(message_text, (SCREEN_WIDTH/2 - message_text.get_width() /
                         2, SCREEN_HEIGHT/2 - message_text.get_height()/2))
         pygame.display.update()
-        pygame.time.delay(3000)
+        pygame.time.delay(500)
 
     # game loop
     clock = pygame.time.Clock()
@@ -239,13 +239,18 @@ def main(run, level):
                 currentPlayer.UpdateHighestScore(score)
             
             if all(letter in guessed for letter in word):
-                #display_message("You WON!")
+                #Update score when player successfully guessed a word
                 score += 10
                 playing = False
                 pygame.time.delay(1000)
             if hangman_status == 6:
-                #display_message("You NOOB!")
+                display_message("You LOSE!")
                 playing = False
-                pygame.time.delay(1000)
+                run = False
+                #pygame.time.delay(1000)
+            if score >= 50:
+                display_message("You WON!")
+                playing = False
+                run = False
 
 # pygame.quit()

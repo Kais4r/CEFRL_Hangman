@@ -103,6 +103,7 @@ while run:
             current_scene = "mainmenu"
         # event handler
     for event in pygame.event.get():
+        #print(event)
         if event.type == pygame.QUIT:
             run = False
         pygame.display.update()
