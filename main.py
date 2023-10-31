@@ -64,8 +64,15 @@ def draw_text(text, font, text_col, x, y):
     screen.blit(img, (x, y))
 
 
+
 # @@@@@@@@@@ game loop
 current_scene = "mainmenu"
+
+def changeToOptionsScreen():
+    video_button.clicked = True
+    audio_button.clicked = True
+    back_button.clicked = True
+
 run = True
 while run:
     if current_scene == "mainmenu":
@@ -80,6 +87,8 @@ while run:
 
         if options_button.draw(screen) == True:
             current_scene = "options"
+            changeToOptionsScreen()
+
         if quit_button.draw(screen) == True:
             run = False
 

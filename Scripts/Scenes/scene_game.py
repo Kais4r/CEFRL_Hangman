@@ -40,7 +40,7 @@ imageList = [pygame.image.load(os.path.join(
 # Load button
 btn_image_dir = game_dir[:-14] + "\Assets\Images\Buttons"
 hintBtn_img = pygame.image.load(
-    btn_image_dir + "\Button_Hint.png").convert_alpha()
+    btn_image_dir + "\Button_Hint2.png").convert_alpha()
 
 hint_button = Button(995, 420, hintBtn_img, 1)
 
@@ -109,6 +109,7 @@ def main(run):
     lives = 6
     hints = 2
 
+    hint_button.clicked = True
     # run = True
     currentPlayer = Player("","","","","","","","","","")
     while run:
